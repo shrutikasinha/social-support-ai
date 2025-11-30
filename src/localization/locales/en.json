@@ -1,0 +1,143 @@
+{
+  "stepperFormLabels": {
+    "personalInfo": "Personal Information",
+    "familyAndFinancialInfo": "Family & Financial Info",
+    "situationDescription": "Situation Descriptions"
+  },
+  "personalInfoForm": {
+    "title": "Enter your Personal Information",
+    "name": {
+      "title": "Name",
+      "namePlaceholder": "Enter Name",
+      "nameRequired": "Name is required",
+      "nameLengthValidation": "Name must be at least 2 characters",
+      "namePatterValidation": "Name should only contain letters and spaces"
+    },
+    "nationalId": {
+      "title": "National ID",
+      "nationalIdPlaceholder": "Enter National ID",
+      "nationalIdRequired": "National ID is required",
+      "nationalIdPatternValidation": "Invalid National ID format"
+    },
+    "dob": {
+      "title": "Date of Birth",
+      "dobPlaceholder": "Enter Date of Birth",
+      "dobRequired": "Date of Birth is required",
+      "dobPatternValidation": "You must be at least 18 years old"
+    },
+    "gender": {
+      "title": "Gender",
+      "genderPlaceholder": "Select Gender",
+      "genderRequired": "Gender is required",
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "address": {
+      "title": "Address",
+      "addressPlaceholder": "Enter Address",
+      "addressRequired": "Address is required",
+      "addressPatternValidation": "Address must be at least 10 characters"
+    },
+    "city": {
+      "title": "City",
+      "cityPlaceholder": "Enter City",
+      "cityRequired": "City is required",
+      "cityPatternValidation": "City should only contain letters and spaces"
+    },
+    "state": {
+      "title": "State",
+      "statePlaceholder": "Enter State",
+      "stateRequired": "State is required",
+      "statePatternValidation": "State should only contain letters and spaces"
+    },
+    "country": {
+      "title": "Country",
+      "countryPlaceholder": "Enter Country",
+      "countryRequired": "Country is required",
+      "countryPatternValidation": "Country should only contain letters and spaces"
+    },
+    "phone": {
+      "title": "Phone Number",
+      "phonePlaceholder": "Enter Phone Number",
+      "phoneRequired": "Phone Number is required",
+      "phonePatternValidation": "Invalid phone number format"
+    },
+    "email": {
+      "title": "Email",
+      "emailPlaceholder": "Enter Email",
+      "emailRequired": "Email is required",
+      "emailPatternValidation": "Invalid email address"
+    }
+  },
+  "familyAndFinancialInfo": {
+    "title": "Family & Financial Info",
+    "maritalStatus": {
+      "title": "Marital Status",
+      "maritalStatusPlaceholder": "Enter Marital Status",
+      "maritalStatusRequired": "Marital Status is mandatory",
+      "single": "Single",
+      "married": "Married",
+      "divorced": "Divorced",
+      "widower": "Widower"
+    },
+    "dependents": {
+      "title": "Dependents",
+      "dependentsPlaceholder": "Enter number of dependents",
+      "dependentsRequired": "Number of dependents are required"
+    },
+    "employeeMentStatus": {
+      "title": "Employment Status",
+      "employeeMentStatusPlaceholder": "Enter Employment Status",
+      "employeeMentStatusRequired": "Employment Status is required"
+    },
+    "monthlyIncome": {
+      "title": "Monthly Income",
+      "monthlyIncomePlaceholder": "Enter Monthly Income",
+      "monthlyIncomeRequired": "Monthly Income is required"
+    },
+    "housingStatus": {
+      "title": "Housing Status",
+      "housingStatusPlaceholder": "Enter Housing Status",
+      "housingStatusRequired": "Housing Status is required"
+    }
+  },
+  "situationDescription": {
+    "title": "Situation Descriptions",
+    "helpMeWriteBtn": "Help me write",
+    "currentFinancialSituation": {
+      "title": "Current Financial Situation",
+      "currentFinancialSituationPlaceholder": "Enter Current Financial Situation",
+      "currentFinancialSituationRequired": "Current Financial Situation Details are required"
+    },
+    "employmentCircumstances": {
+      "title": "Employment Circumstances",
+      "employmentCircumstancesPlaceholder": "Enter Monthly Income",
+      "employmentCircumstancesRequired": "Monthly Income is required"
+    },
+    "applyingReason": {
+      "title": "Reason for Applying",
+      "applyingReasonPlaceholder": "Enter the reason",
+      "applyingReasonRequired": "Reason for applying is required"
+    }
+  },
+  "btns": {
+    "next": "Next",
+    "submit": "Submit",
+    "previous": "Previous"
+  },
+  "enterYourLabel": "Enter your {{title}}",
+  "locale": {
+    "en": "English",
+    "ar": "عربي"
+  },
+  "formRequired": "is a required field",
+  "generatingAiResult": "Generating content with AI...",
+  "generatedContextEdit": "Generated Content (Edit as needed):",
+  "helpMeWriteModal": {
+    "title": "AI Writing Assistant",
+    "acceptBtn": "Accept",
+    "regenerateBtn": "Regenerate",
+    "discardBtn": "Discard"
+  }
+}

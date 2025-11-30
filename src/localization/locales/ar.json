@@ -1,0 +1,143 @@
+{
+  "stepperFormLabels": {
+    "personalInfo": "المعلومات الشخصية",
+    "familyAndFinancialInfo": "المعلومات العائلية والمالية",
+    "situationDescription": "وصف الحالة"
+  },
+  "personalInfoForm": {
+    "title": "أدخل معلوماتك الشخصية",
+    "name": {
+      "title": "الاسم",
+      "namePlaceholder": "أدخل الاسم",
+      "nameRequired": "الاسم مطلوب",
+      "nameLengthValidation": "يجب أن يتكون الاسم من حرفين على الأقل",
+      "namePatterValidation": "يجب أن يحتوي الاسم على أحرف ومسافات فقط"
+    },
+    "nationalId": {
+      "title": "الهوية الوطنية",
+      "nationalIdPlaceholder": "أدخل رقم الهوية الوطنية",
+      "nationalIdRequired": "رقم الهوية الوطنية مطلوب",
+      "nationalIdPatternValidation": "تنسيق رقم الهوية الوطنية غير صالح"
+    },
+    "dob": {
+      "title": "تاريخ الميلاد",
+      "dobPlaceholder": "أدخل تاريخ الميلاد",
+      "dobRequired": "تاريخ الميلاد مطلوب",
+      "dobPatternValidation": "يجب أن يكون عمرك 18 عاماً على الأقل"
+    },
+    "gender": {
+      "title": "الجنس",
+      "genderPlaceholder": "اختر الجنس",
+      "genderRequired": "الجنس مطلوب",
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "address": {
+      "title": "العنوان",
+      "addressPlaceholder": "أدخل العنوان",
+      "addressRequired": "العنوان مطلوب",
+      "addressPatternValidation": "يجب ألا يقل العنوان عن 10 أحرف"
+    },
+    "city": {
+      "title": "المدينة",
+      "cityPlaceholder": "أدخل المدينة",
+      "cityRequired": "المدينة مطلوبة",
+      "cityPatternValidation": "يجب أن تحتوي المدينة على أحرف ومسافات فقط"
+    },
+    "state": {
+      "title": "الولاية / الإمارة",
+      "statePlaceholder": "أدخل الولاية / الإمارة",
+      "stateRequired": "الولاية / الإمارة مطلوبة",
+      "statePatternValidation": "يجب أن تحتوي الولاية / الإمارة على أحرف ومسافات فقط"
+    },
+    "country": {
+      "title": "الدولة",
+      "countryPlaceholder": "أدخل الدولة",
+      "countryRequired": "الدولة مطلوبة",
+      "countryPatternValidation": "يجب أن تحتوي الدولة على أحرف ومسافات فقط"
+    },
+    "phone": {
+      "title": "رقم الهاتف",
+      "phonePlaceholder": "أدخل رقم الهاتف",
+      "phoneRequired": "رقم الهاتف مطلوب",
+      "phonePatternValidation": "تنسيق رقم الهاتف غير صالح"
+    },
+    "email": {
+      "title": "البريد الإلكتروني",
+      "emailPlaceholder": "أدخل البريد الإلكتروني",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailPatternValidation": "عنوان البريد الإلكتروني غير صالح"
+    }
+  },
+  "familyAndFinancialInfo": {
+    "title": "المعلومات العائلية والمالية",
+    "maritalStatus": {
+      "title": "الحالة الاجتماعية",
+      "maritalStatusPlaceholder": "أدخل الحالة الاجتماعية",
+      "maritalStatusRequired": "الحالة الاجتماعية مطلوبة",
+      "single": "أعزب",
+      "married": "متزوج",
+      "divorced": "مُطلّق",
+      "widower": "أرمل"
+    },
+    "dependents": {
+      "title": "المعالون",
+      "dependentsPlaceholder": "أدخل عدد المعالين",
+      "dependentsRequired": "عدد المعالين مطلوب"
+    },
+    "employeeMentStatus": {
+      "title": "حالة التوظيف",
+      "employeeMentStatusPlaceholder": "أدخل حالة التوظيف",
+      "employeeMentStatusRequired": "حالة التوظيف مطلوبة"
+    },
+    "monthlyIncome": {
+      "title": "الدخل الشهري",
+      "monthlyIncomePlaceholder": "أدخل الدخل الشهري",
+      "monthlyIncomeRequired": "الدخل الشهري مطلوب"
+    },
+    "housingStatus": {
+      "title": "حالة السكن",
+      "housingStatusPlaceholder": "أدخل حالة السكن",
+      "housingStatusRequired": "حالة السكن مطلوبة"
+    }
+  },
+  "situationDescription": {
+    "title": "وصف الحالة",
+    "helpMeWriteBtn": "ساعدني في الكتابة",
+    "currentFinancialSituation": {
+      "title": "الوضع المالي الحالي",
+      "currentFinancialSituationPlaceholder": "أدخل وصف الوضع المالي الحالي",
+      "currentFinancialSituationRequired": "بيان الوضع المالي الحالي مطلوب"
+    },
+    "employmentCircumstances": {
+      "title": "ظروف العمل",
+      "employmentCircumstancesPlaceholder": "أدخل الدخل الشهري",
+      "employmentCircumstancesRequired": "الدخل الشهري مطلوب"
+    },
+    "applyingReason": {
+      "title": "سبب التقديم",
+      "applyingReasonPlaceholder": "أدخل السبب",
+      "applyingReasonRequired": "سبب التقديم مطلوب"
+    }
+  },
+  "btns": {
+    "next": "التالي",
+    "submit": "إرسال",
+    "previous": "السابق"
+  },
+  "enterYourLabel": "أدخل {{title}}",
+  "formRequired": "هو حقل مطلوب",
+  "generatingAiResult": "إنشاء المحتوى باستخدام الذكاء الاصطناعي",
+  "generatedContextEdit": "المحتوى المُولَّد (تعديل حسب الحاجة):",
+  "locale": {
+    "en": "English",
+    "ar": "عربي"
+  },
+  "helpMeWriteModal": {
+    "title": "مساعد الكتابة بالذكاء الاصطناعي",
+    "acceptBtn": "يقبل",
+    "regenerateBtn": "تجديد",
+    "discardBtn": "ينبذ"
+  }
+}
