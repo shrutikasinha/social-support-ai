@@ -68,7 +68,7 @@ const Stepper = () => {
   const { stepId } = useParams<{ stepId: string }>();
   const saved = localStorage.getItem(FORM_KEY);
   const [postFormData, { isLoading }] = useLazyPostFormDataQuery();
-  
+
   const currentStep = stepId ? parseInt(stepId) - 1 : 0;
 
   const getDefaultValues = () => {
@@ -134,13 +134,13 @@ const Stepper = () => {
 
   useEffect(() => {
     const savedStep = localStorage.getItem(STEP_KEY);
-    
+
     if (!stepId) {
       const targetStep = savedStep ? parseInt(savedStep) : 1;
       navigate(`/step/${targetStep}`, { replace: true });
       return;
     }
-    
+
     if (currentStep < 0 || currentStep >= items.length) {
       navigate("/step/1", { replace: true });
       return;
@@ -164,42 +164,42 @@ const Stepper = () => {
   };
 
   const handleSubmit = async () => {
-    const formData = JSON.parse(serializeFormData(formValues))
-    try{
-        const resp = await postFormData(formData).unwrap()
-        if(resp) {
-            message.success("Form Submitted Successfully.")
-            localStorage.removeItem(STEP_KEY)
-            localStorage.removeItem(FORM_KEY)
+    const formData = JSON.parse(serializeFormData(formValues));
+    try {
+      const resp = await postFormData(formData).unwrap();
+      if (resp) {
+        message.success("Form Submitted Successfully.");
+        localStorage.removeItem(STEP_KEY);
+        localStorage.removeItem(FORM_KEY);
 
-            setTimeout(() => {
-                navigate('/')
-                localStorage.removeItem(STEP_KEY)
-            localStorage.removeItem(FORM_KEY)
-            reset({
-                name: "",
-                nationalId: "",
-                dob: "",
-                gender: "",
-                address: "",
-                city: "",
-                state: "",
-                country: "",
-                phone: "",
-                email: "",
-                maritalStatus: "",
-                dependents: "",
-                employeeMentStatus: "",
-                monthlyIncome: "",
-                housingStatus: "",
-                currentFinancialSituation: "",
-                employmentCircumstances: "",
-                applyingReason: "",
-              })
-            }, 1000)
-        }
-    } catch(err) {
-        message.error(getErrorMessage(err))
+        setTimeout(() => {
+          navigate("/");
+          localStorage.removeItem(STEP_KEY);
+          localStorage.removeItem(FORM_KEY);
+          reset({
+            name: "",
+            nationalId: "",
+            dob: "",
+            gender: "",
+            address: "",
+            city: "",
+            state: "",
+            country: "",
+            phone: "",
+            email: "",
+            maritalStatus: "",
+            dependents: "",
+            employeeMentStatus: "",
+            monthlyIncome: "",
+            housingStatus: "",
+            currentFinancialSituation: "",
+            employmentCircumstances: "",
+            applyingReason: "",
+          });
+        }, 1000);
+      }
+    } catch (err) {
+      message.error(getErrorMessage(err));
     }
   };
 
@@ -211,9 +211,9 @@ const Stepper = () => {
     <FormProvider {...methods}>
       <div className="p-6 ml-12 mr-12">
         <Flex vertical gap="large">
-          <Steps 
-            current={currentStep} 
-            items={items} 
+          <Steps
+            current={currentStep}
+            items={items}
             variant="outlined"
             onChange={handleStepChange}
           />
@@ -238,8 +238,17 @@ const Stepper = () => {
               </Button>
               <Button
                 type="primary"
-                loading={isLoading && currentStep === items.length - 1 ? isLoading : false}
-                disabled={currentStep === items.length - 1 && !hasNoEmptyValues(formValues) ? true : false}
+                loading={
+                  isLoading && currentStep === items.length - 1
+                    ? isLoading
+                    : false
+                }
+                disabled={
+                  currentStep === items.length - 1 &&
+                  !hasNoEmptyValues(formValues)
+                    ? true
+                    : false
+                }
                 onClick={
                   currentStep === items.length - 1 ? handleSubmit : handleNext
                 }

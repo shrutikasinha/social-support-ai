@@ -10,11 +10,10 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",            // initial fallback
+  lng: "en", // initial fallback
   fallbackLng: "en",
   interpolation: { escapeValue: false },
 });
-
 
 export const setI18nLanguage = (lang: string) => {
   i18n.changeLanguage(lang);

@@ -7,10 +7,13 @@ const appStore = configureStore({
   reducer: {
     currentTab: stepFormSlice,
     [suggestionsApi.reducerPath]: suggestionsApi.reducer,
-    postForm: postForm.reducer
+    postForm: postForm.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(suggestionsApi.middleware, postForm.middleware),
+    getDefaultMiddleware().concat(
+      suggestionsApi.middleware,
+      postForm.middleware,
+    ),
 });
 
 export type RootState = ReturnType<typeof appStore.getState>;

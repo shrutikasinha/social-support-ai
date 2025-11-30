@@ -67,7 +67,14 @@ const StepThreeForm = ({ control }: StepOneFormProps) => {
             </label>
             <Button
               type="link"
-              icon={<img src={"/ai-technology.png"} width={20} height={10} alt={"Help me write logo"}  />}
+              icon={
+                <img
+                  src={"/ai-technology.png"}
+                  width={20}
+                  height={10}
+                  alt={"Help me write logo"}
+                />
+              }
               size="small"
               onClick={() =>
                 handleHelpMeWrite(
@@ -102,7 +109,14 @@ const StepThreeForm = ({ control }: StepOneFormProps) => {
             </label>
             <Button
               type="link"
-              icon={<img src={"/ai-technology.png"} width={20} height={10} alt={"Help me write logo"}  />}
+              icon={
+                <img
+                  src={"/ai-technology.png"}
+                  width={20}
+                  height={10}
+                  alt={"Help me write logo"}
+                />
+              }
               size="small"
               onClick={() =>
                 handleHelpMeWrite(
@@ -138,7 +152,14 @@ const StepThreeForm = ({ control }: StepOneFormProps) => {
             </label>
             <Button
               type="link"
-              icon={<img src={"/ai-technology.png"} width={20} height={10} alt={"Help me write logo"} />}
+              icon={
+                <img
+                  src={"/ai-technology.png"}
+                  width={20}
+                  height={10}
+                  alt={"Help me write logo"}
+                />
+              }
               size="small"
               onClick={() =>
                 handleHelpMeWrite(
@@ -175,6 +196,7 @@ const StepThreeForm = ({ control }: StepOneFormProps) => {
           context={currentField.context}
           currentValue={currentField.value}
           fieldLabel={currentField.label}
+          formValues={getValues()}
         />
       )}
     </>

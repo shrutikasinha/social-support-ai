@@ -35,31 +35,33 @@ function FormField<T extends FormDataValues>({
   required = true,
   typeNumber = "string",
 }: FormFieldProps<T>) {
-    const {t} = useTranslation()
+  const { t } = useTranslation();
   const renderComponent = (field: unknown) => {
-    if(field){
-    switch (component) {
-      case "datePicker":
-        return <DatePicker {...field} style={{ width: "100%" }} />;
-      case "rangePicker":
-        return <DatePicker.RangePicker {...field} style={{ width: "100%" }} />;
-      case "select":
-        return (
-          <Select {...field} placeholder={placeholder} options={options} />
-        );
-      default:
-        return rows === 0 ? (
-          <Input
-            {...field}
-            placeholder={placeholder}
-            type={typeNumber}
-            min={0}
-          />
-        ) : (
-          <Input.TextArea {...field} placeholder={placeholder} rows={rows} />
-        );
+    if (field) {
+      switch (component) {
+        case "datePicker":
+          return <DatePicker {...field} style={{ width: "100%" }} />;
+        case "rangePicker":
+          return (
+            <DatePicker.RangePicker {...field} style={{ width: "100%" }} />
+          );
+        case "select":
+          return (
+            <Select {...field} placeholder={placeholder} options={options} />
+          );
+        default:
+          return rows === 0 ? (
+            <Input
+              {...field}
+              placeholder={placeholder}
+              type={typeNumber}
+              min={0}
+            />
+          ) : (
+            <Input.TextArea {...field} placeholder={placeholder} rows={rows} />
+          );
+      }
     }
-}
   };
 
   return (

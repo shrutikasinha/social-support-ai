@@ -5,6 +5,8 @@ interface AIWriteRequest {
   fieldName: string;
   context: string;
   currentValue?: string;
+  usePersonalData?: boolean;
+  previousFormData: string;
 }
 
 interface AIWriteResponse {
@@ -16,10 +18,7 @@ export const suggestionsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api.openai.com/v1",
     prepareHeaders: (headers) => {
-      headers.set(
-        "Authorization",
-        `Bearer ${import.meta.env.VITE_OPENAI_ID}`,
-      );
+      headers.set("Authorization", `Bearer ${import.meta.env.VITE_OPENAI_ID}`);
       headers.set("Content-Type", "application/json");
       return headers;
     },
@@ -38,7 +37,7 @@ export const suggestionsApi = createApi({
             },
             {
               role: "user",
-              content: `Context: ${data.context}\n\nCurrent value: ${data.currentValue || "None"}\n\nPlease generate appropriate content for this field.`,
+              content: `Context: ${data.context}\n\nForm data: ${data.usePersonalData ? data.previousFormData : ""}\n\nCurrent value: ${data.currentValue || "None"}\n\nPlease generate appropriate content for this field and if there is form data is not empty then take into consideration the form data as well and generate message accordingly.`,
             },
           ],
           temperature: 0.7,

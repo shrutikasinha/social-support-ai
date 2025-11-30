@@ -22,7 +22,7 @@ const LanguageProvider = ({ children }: LanguageProviderProps) => {
 
   const setLang = () => {
     setLocale(locale === "en" ? "ar" : "en");
-    setI18nLanguage(locale === "en" ? "ar" : "en")
+    setI18nLanguage(locale === "en" ? "ar" : "en");
   };
   return (
     <LanguageContext.Provider value={{ lang: locale, setLang }}>

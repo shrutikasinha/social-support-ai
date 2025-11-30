@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Modal, Input, Button, Spin, message } from "antd";
+import { Modal, Input, Button, Spin, message, Radio, Space } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useGenerateContentMutation } from "../../redux/slices/apiSlices/suggestionApiSlice";
 import { getErrorMessage } from "../../utils/errorHandler";
 import { useTranslation } from "react-i18next";
+import type { FormDataValues } from "../../types/formValues";
 
 const { TextArea } = Input;
 
@@ -15,6 +16,7 @@ interface AIWritingModalProps {
   context: string;
   currentValue?: string;
   fieldLabel: string;
+  formValues: FormDataValues;
 }
 
 export const HelpMeWriteModal: React.FC<AIWritingModalProps> = ({
@@ -25,10 +27,13 @@ export const HelpMeWriteModal: React.FC<AIWritingModalProps> = ({
   context,
   currentValue,
   fieldLabel,
+  formValues,
 }) => {
   const { t } = useTranslation();
   const [generateContent, { isLoading, error }] = useGenerateContentMutation();
   const [editedContent, setEditedContent] = useState("");
+  const [usePersonalData, setUsePersonalData] = useState<boolean | null>(null);
+  const [hasAskedPermission, setHasAskedPermission] = useState(false);
   const hasGeneratedRef = useRef(false);
 
   const handleGenerate = async (edited?: boolean) => {
@@ -38,6 +43,8 @@ export const HelpMeWriteModal: React.FC<AIWritingModalProps> = ({
         fieldName,
         context,
         currentValue: currentText,
+        usePersonalData: usePersonalData ?? false,
+        previousFormData: JSON.stringify(formValues),
       }).unwrap();
 
       setEditedContent(result.content);
@@ -48,13 +55,20 @@ export const HelpMeWriteModal: React.FC<AIWritingModalProps> = ({
     }
   };
 
+  const handlePersonalDataChoice = (choice: boolean) => {
+    setUsePersonalData(choice);
+    setHasAskedPermission(true);
+  };
+
   useEffect(() => {
-    if (visible && !hasGeneratedRef.current) {
+    if (visible && !hasGeneratedRef.current && hasAskedPermission) {
       hasGeneratedRef.current = true;
       generateContent({
         fieldName,
         context,
         currentValue,
+        usePersonalData: usePersonalData ?? false,
+        previousFormData: JSON.stringify(formValues),
       })
         .unwrap()
         .then((result) => {
@@ -66,13 +80,28 @@ export const HelpMeWriteModal: React.FC<AIWritingModalProps> = ({
           console.error("AI Generation Error:", msg);
         });
     }
+  }, [
+    visible,
+    hasAskedPermission,
+    generateContent,
+    fieldName,
+    context,
+    currentValue,
+    usePersonalData,
+    formValues,
+  ]);
 
+  useEffect(() => {
     if (!visible) {
       hasGeneratedRef.current = false;
     }
-  }, [visible, generateContent, fieldName, context, currentValue]);
+  }, [visible]);
 
   const handleDiscard = () => {
+    // Reset state when closing
+    setHasAskedPermission(false);
+    setUsePersonalData(null);
+    setEditedContent("");
     onClose();
   };
 
@@ -94,7 +123,48 @@ export const HelpMeWriteModal: React.FC<AIWritingModalProps> = ({
       footer={null}
     >
       <div style={{ minHeight: "300px" }}>
-        {isLoading ? (
+        {!hasAskedPermission ? (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              minHeight: "300px",
+              gap: "24px",
+              padding: "24px",
+            }}
+          >
+            <div style={{ textAlign: "center", maxWidth: "500px" }}>
+              <h3 style={{ marginBottom: "16px", fontSize: "18px" }}>
+                {t("helpMeWriteModal.personalDataTitle")}
+              </h3>
+              <p
+                style={{
+                  fontSize: "14px",
+                  color: "#666",
+                  marginBottom: "24px",
+                }}
+              >
+                {t("helpMeWriteModal.personalDataDescription")}
+              </p>
+              <Radio.Group
+                onChange={(e) => handlePersonalDataChoice(e.target.value)}
+                value={usePersonalData}
+                style={{ marginBottom: "24px" }}
+              >
+                <Space size="middle">
+                  <Radio value={true} style={{ fontSize: "14px" }}>
+                    {t("helpMeWriteModal.usePersonalDataYes")}
+                  </Radio>
+                  <Radio value={false} style={{ fontSize: "14px" }}>
+                    {t("helpMeWriteModal.usePersonalDataNo")}
+                  </Radio>
+                </Space>
+              </Radio.Group>
+            </div>
+          </div>
+        ) : isLoading ? (
           <div
             style={{
               display: "flex",
@@ -168,12 +238,21 @@ export const HelpMeWriteModal: React.FC<AIWritingModalProps> = ({
               </Button>
               <Button
                 type="default"
-                onClick={() => handleGenerate(true)}
+                onClick={() => handleGenerate(false)}
                 loading={isLoading}
               >
                 {t("helpMeWriteModal.regenerateBtn")}
               </Button>
-              <Button onClick={handleDiscard}>{t("helpMeWriteModal.discardBtn")}</Button>
+              <Button
+                type="default"
+                onClick={() => handleGenerate(true)}
+                loading={isLoading}
+              >
+                {t("helpMeWriteModal.regenerateWithEdit")}
+              </Button>
+              <Button onClick={handleDiscard} className="bg-red-500 text-white">
+                {t("helpMeWriteModal.discardBtn")}
+              </Button>
             </div>
           </>
         )}

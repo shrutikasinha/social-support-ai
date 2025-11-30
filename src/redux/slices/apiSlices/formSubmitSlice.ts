@@ -10,7 +10,7 @@ export const postForm = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://jsonplaceholder.typicode.com",
     prepareHeaders: (headers) => {
-      headers.set("Content-Type", "application/json; charset=UTF-8")
+      headers.set("Content-Type", "application/json; charset=UTF-8");
       return headers;
     },
   }),
@@ -20,7 +20,7 @@ export const postForm = createApi({
         url: "/posts",
         method: "POST",
         body: JSON.stringify(data),
-      })
+      }),
     }),
   }),
 });

@@ -138,6 +138,11 @@
     "title": "مساعد الكتابة بالذكاء الاصطناعي",
     "acceptBtn": "يقبل",
     "regenerateBtn": "تجديد",
-    "discardBtn": "ينبذ"
+    "discardBtn": "ينبذ",
+    "regenerateWithEdit": "تحرير وإعادة التوليد",
+    "personalDataTitle": "ساعدني في الكتابة",
+    "personalDataDescription": "هل ترغب في استخدام البيانات المُدخلة سابقًا لإنشاء محتوى أكثر تخصيصًا؟",
+    "usePersonalDataYes": "نعم، استخدم بياناتي الشخصية للحصول على نتائج أفضل",
+    "usePersonalDataNo": "لا، أنشئ المحتوى دون استخدام البيانات الشخصية"
   }
 }

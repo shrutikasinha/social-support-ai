@@ -64,11 +64,9 @@ const StepOneForm = ({ control }: StepOneFormProps) => {
               "toDate" in value
             ) {
               date = (value as Dayjs).toDate();
-            }
-            else if (typeof value === "string") {
+            } else if (typeof value === "string") {
               date = new Date(value);
-            }
-            else {
+            } else {
               return true;
             }
 

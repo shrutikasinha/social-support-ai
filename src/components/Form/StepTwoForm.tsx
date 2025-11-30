@@ -22,10 +22,22 @@ const StepTwoForm = ({ control }: StepOneFormProps) => {
         )}
         component="select"
         options={[
-          { label: t("familyAndFinancialInfo.maritalStatus.single"), value: "single" },
-          { label: t("familyAndFinancialInfo.maritalStatus.married"), value: "married" },
-          { label: t("familyAndFinancialInfo.maritalStatus.divorced"), value: "divorced" },
-          { label: t("familyAndFinancialInfo.maritalStatus.widower"), value: "widower" },
+          {
+            label: t("familyAndFinancialInfo.maritalStatus.single"),
+            value: "single",
+          },
+          {
+            label: t("familyAndFinancialInfo.maritalStatus.married"),
+            value: "married",
+          },
+          {
+            label: t("familyAndFinancialInfo.maritalStatus.divorced"),
+            value: "divorced",
+          },
+          {
+            label: t("familyAndFinancialInfo.maritalStatus.widower"),
+            value: "widower",
+          },
         ]}
         rules={{
           required: t(
@@ -76,9 +88,13 @@ const StepTwoForm = ({ control }: StepOneFormProps) => {
         name="housingStatus"
         control={control}
         label={t("familyAndFinancialInfo.housingStatus.title")}
-        placeholder={t("familyAndFinancialInfo.housingStatus.housingStatusPlaceholder")}
+        placeholder={t(
+          "familyAndFinancialInfo.housingStatus.housingStatusPlaceholder",
+        )}
         rules={{
-          required: t("familyAndFinancialInfo.housingStatus.housingStatusRequired"),
+          required: t(
+            "familyAndFinancialInfo.housingStatus.housingStatusRequired",
+          ),
         }}
       />
     </Form>

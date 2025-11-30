@@ -138,6 +138,11 @@
     "title": "AI Writing Assistant",
     "acceptBtn": "Accept",
     "regenerateBtn": "Regenerate",
-    "discardBtn": "Discard"
+    "regenerateWithEdit": "Edit & Regenerate",
+    "discardBtn": "Discard",
+    "personalDataTitle": "Help me Write",
+    "personalDataDescription": "Would you like to use data from previously filled form fields to generate more personalized content?",
+    "usePersonalDataYes": "Yes, use my personal data for better results",
+    "usePersonalDataNo": "No, generate without personal data"
   }
 }

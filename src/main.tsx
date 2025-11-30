@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={appStore}>
       <LanguageProvider>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
       </LanguageProvider>
     </Provider>
   </StrictMode>,
