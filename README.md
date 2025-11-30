@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Docker
 
 # Social Support – AI Integrated
 
@@ -40,6 +40,14 @@ The app combines a modern frontend stack with OpenAI’s API, wired through Redu
 
 git clone https://github.com/shrutikasinha/social-support-ai.git
 cd social-support-ai
+npm i 
+OR
+## 🐳 Docker Image
+
+You can pull and run the image using:
+
+docker pull shrutikasinha/social-support-ai:latest
+docker run shrutikasinha/social-support-ai:latest
 
 ## ✨ Key Features
 
@@ -95,6 +103,7 @@ enter → improve → tweak → improve again,
 keeping the content helpful, accurate, and editable at every step.
 
 ---
+
 
 
 
