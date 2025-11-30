@@ -128,7 +128,7 @@ const StepOneForm = ({ control }: StepOneFormProps) => {
             message: t("personalInfoForm.state.statePatternValidation"),
           },
         }}
-        required={false}
+        //required={false}
       />
       <FormField
         name="country"
