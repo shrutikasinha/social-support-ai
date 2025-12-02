@@ -16,7 +16,7 @@ The app combines a modern frontend stack with OpenAI’s API, wired through Redu
 
 **State Management**
 
-- **Redux Toolkit** – Centralised state + async API calls (RTK Query / createAsyncThunk).
+- **Redux Toolkit** – Centralised state + async API calls (RTK Query).
 
 **Forms & UI**
 
